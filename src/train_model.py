@@ -35,7 +35,7 @@ val_dataset = ImageFolder(VALID_DIR, transform=transform)
 
 # Create DataLoaders
 batch_size = 48
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
 val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
 # Initialize the model
